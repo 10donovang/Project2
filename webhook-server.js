@@ -5,7 +5,7 @@ var restClient = require('node-rest-client').Client;
 var PORT = (process.env.PORT || 5000);
 var SECURITY_TOKEN = 'OJdqYg87SOcax0baFpf5WInifeErRryPA9qLjiugadBgenwi3UDBj8od21UM5to';
 var HTTP_AUTH_B64_TOKEN = 'dXNlcjEyMzpwYXNzNzg5'; // user123:pass789
-var TARGET_HOOK = 'https://hooks.slack.com/services/<my_target>';
+var TARGET_HOOK = 'https://hooks.slack.com/services/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';
 var te_img = 'https://s3.amazonaws.com/uploads.hipchat.com/6634/194641/uncYbgVEMQ1XNtk/TE-Eye-36x36.jpg';
 var app = express();
 
@@ -80,11 +80,11 @@ function translateHookContent_slack(req) {
         default:
             retVal = "Received unregistered event type " + req.body.eventType + " from ThousandEyes webhook.  Body data: \n" + JSON.stringify(req.body);
     }
-    return ({ username: "ThousandEyes Alerts", icon_url: te_img, text: retVal});
+    return ({ username: "Alert", icon_url: te_img, text: retVal});
 }
 
 app.get('/', function(request, response) {
-  response.send('This the ThousandEyes simple Webhook server sample.  Use POST methods instead of GET.')
+  response.send('This a test.  Use POST methods instead of GET.')
   console.log('GET request received');
 })
 
