@@ -1,1 +1,1 @@
-web: node index.js
+web: node webhook-server.js
