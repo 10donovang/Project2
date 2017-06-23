@@ -1,13 +1,17 @@
 {
-  "name": "webhook-server",
-  "version": "0.1.0",
-  "description": "Webhook Server",
-  "dependencies": {
-    "express": "~4.x.x",
-    "body-parser": "~1.0.x",
-    "node-rest-client": "~1.5.x"
-  },
+  "name": "chatbot",
+  "version": "1.0.0",
+  "description": "FactChatBot Server",
+  "main": "webhook-server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
     "start": "node webhook-server.js"
+  },
+  "author": "Donovan Gregory",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.8",
+    "request": "^2.81.0"
   }
 }
