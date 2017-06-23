@@ -1,1 +1,3 @@
 web: node webhook-server.js
+
+curl -X GET "https://graph.facebook.com/v2.6/me/messenger_profile?fields=get_started&access_token=EAAbhpvAjN3QBAI20kXzL8NynBm6AArwhp5ZBDDkZAl5xZAvePW3nDWtdHliZAREETn8aoRYCRjtY6kKSMS2ZAZC2rGpaV5Gxovtpu3ZACI7YR2hYUkn9H38h9vrkc20G2taFUD59ecurWix9cZC198ZAfI2FZC5J69F8ZCDZCUF8MAnaaAZDZD"
