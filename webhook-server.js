@@ -66,7 +66,7 @@ function processPostback(event) {
         name = bodyObj.first_name;
         greeting = "Hi " + name + ". ";
       }
-      var message = greeting + "My name is SP Movie Bot. I can tell you various details regarding movies. What movie would you like to know about?";
+      var message = greeting + "My name is Fact Bot. If you tell me a number, I will tell you facts about that number.";
       sendMessage(senderId, {text: message});
     });
   }
