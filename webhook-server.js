@@ -120,6 +120,7 @@ function findFact(userId, math) {
         console.log(math);
         
             var factObj = JSON.parse(body);
+            console.log(factObj.found);
             if (factObj.found === "true") {
                 var query = {user_id: userId};
                 var update = {
