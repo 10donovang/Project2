@@ -119,7 +119,7 @@ function findFact(userId, math) {
     request("http://numbersapi.com/" + math + "?json", function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var factObj = JSON.parse(body);
-            if (factObj.Response === "True") {
+            if (factObj.found === "true") {
                 var query = {user_id: userId};
                 var update = {
                     user_id: userId,
@@ -157,7 +157,7 @@ function findFact(userId, math) {
                     }
                 });
             } else {
-                console.log(movieObj.Error);
+                console.log(factObj.Error);
                 sendMessage(userId, {text: factObj.Error});
             }
         } else {
