@@ -157,8 +157,8 @@ function findFact(userId, math) {
                     }
                 });
             } else {
-                console.log(factObj.Error);
-                sendMessage(userId, {text: factObj.Error});
+                console.log("Error." + response.statusCode);
+                sendMessage(userId, {text: "Something went wrong. Try again."});
             }
         } else {
             sendMessage(userId, {text: "Something went wrong. Try again."});
