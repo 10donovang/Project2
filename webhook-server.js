@@ -117,6 +117,7 @@ function processMessage(event) {
 
 function findFact(userId, math) {
     request("http://numbersapi.com/" + math + "?json", function (error, response, body) {
+        console.log(math);
         if (response.statusCode === 200) {
             var factObj = JSON.parse(body);
             if (factObj.found === "true") {
