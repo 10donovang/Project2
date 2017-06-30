@@ -103,7 +103,7 @@ function processMessage(event) {
                 case "year":
                 case "date":
                 case "math":
-                    findFact(senderId, formattedMsg);
+                    findFact(senderId, formatted);
                     break;
 
                 default:
