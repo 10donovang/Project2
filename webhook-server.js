@@ -157,7 +157,7 @@ function findFact(userId, math) {
                     }
                 });
             } else {
-                console.log("Error." + response.statusCode);
+                console.log("Error: " + response.statusCode +" " + response.error);
                 sendMessage(userId, {text: "Something went wrong. Try again."});
             }
         } else {
