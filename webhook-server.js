@@ -92,7 +92,8 @@ function processMessage(event) {
 
         // You may get a text or attachment but not both
         if (message.text) {
-            var formattedMsg = message.text.toLowerCase().trim();
+            var formatted = message.text.toLowerCase().trim();
+            var formattedMsg = formatted.split("/").pop();
 
             // If we receive a text message, check to see if it matches any special
             // keywords and send back the corresponding movie detail.
