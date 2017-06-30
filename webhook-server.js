@@ -118,7 +118,7 @@ function processMessage(event) {
 function findFact(userId, math) {
     request("http://numbersapi.com/" + math + "?json", function (error, response, body) {
         console.log(math);
-        if (response.statusCode == 200) {
+        
             var factObj = JSON.parse(body);
             if (factObj.found === "true") {
                 var query = {user_id: userId};
@@ -157,11 +157,9 @@ function findFact(userId, math) {
                         sendMessage(userId, message);
                     }
                 });
-            } else {
-                console.log("Error: " + response.statusCode +" " + response.error);
-                sendMessage(userId, {text: "Something went wrong. Try again."});
-            }
-        } else {
+            } 
+            
+         else {
             sendMessage(userId, {text: "Something went wrong. Try again."});
         }
     });
