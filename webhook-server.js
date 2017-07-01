@@ -78,7 +78,7 @@ function processPostback(event) {
     } else if (payload === "Correct") {
         sendMessage(senderId, {text: "Awesome! What number would you like to know about? Remember to type the number/type. Ex: '5/trivia' or '1950/year' or '6/30/date' or '7/math'"});
     } else if (payload === "Incorrect") {
-        sendMessage(senderId, {text: "Oops! Sorry about that. Did you do it in the order shown above with a slash and correct spelling? Try again."});
+        sendMessage(senderId, {text: "Have yourself a wonderful day! If you ever want to ask me about another number, just enter it in the chat box."});
     }
 }
 
