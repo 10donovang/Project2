@@ -123,7 +123,7 @@ function findFact(userId, math) {
             console.log(factObj.found);
             console.log(factObj.number);
             console.log(factObj.text);
-            if (factObj.found === "true") {
+            if (factObj.found === true) {
                 var query = {user_id: userId};
                 var update = {
                     user_id: userId,
