@@ -94,8 +94,6 @@ function processMessage(event) {
         if (message.text) {
             var formatted = message.text;
             var formattedMsg = formatted.split("/").pop();
-            var random;
-            var isnum;
           
             switch (formattedMsg) {
                 case "trivia":
@@ -106,23 +104,7 @@ function processMessage(event) {
                     break;
 
                 default:
-                console.log(formated);
-                isnum = /^\d+$/.test(formated);
-                if(isnum)
-                {
-                  random = Math.floor(Math.random() * 3);
-                 if(random == 0)
-                    {formatted += "/trivia";}
-                else if (random == 1)
-                    {formated += "/year";}
-                else if (random == 2)
-                   {formated += "/math";}
-                console.log(formated);
-                findFact(senderId, formated);   
-                }
-
-                else
-                    {sendMessage(senderId, {text: "Sorry, I don't understand your request."});}
+                sendMessage(senderId, {text: "Sorry, I don't understand your request."});
         }
 
         } 
