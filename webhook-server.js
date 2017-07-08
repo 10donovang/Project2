@@ -94,10 +94,9 @@ function processMessage(event) {
         if (message.text) {
             var formatted = message.text;
             var formattedMsg = formatted.split("/").pop();
-
-            // If we receive a text message, check to see if it matches any special
-            // keywords and send back the corresponding movie detail.
-            // Otherwise search for new movie.
+            var random;
+            var isnum;
+          
             switch (formattedMsg) {
                 case "trivia":
                 case "year":
@@ -108,22 +107,22 @@ function processMessage(event) {
 
                 default:
                 console.log(formated);
-                var isnum = /^\d+$/.test(formated);
+                isnum = /^\d+$/.test(formated);
                 if(isnum)
                 {
-                 var random = Math.floor(Math.random() * 3);
+                  random = Math.floor(Math.random() * 3);
                  if(random == 0)
-                    formatted += "/trivia";
+                    {formatted += "/trivia";}
                 else if (random == 1)
-                    formated += "/year";
+                    {formated += "/year";}
                 else if (random == 2)
-                    formated += "/math";
+                   {formated += "/math";}
                 console.log(formated);
                 findFact(senderId, formated);   
                 }
 
                 else
-                    sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+                    {sendMessage(senderId, {text: "Sorry, I don't understand your request."});}
         }
 
         } 
