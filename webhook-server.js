@@ -131,7 +131,7 @@ console.log(formatted);
                 else if (random == 2)
                    {formatted += "/math";}
                 console.log(formatted);
-                findFact(senderId, formatted);   
+                findFact(userId, formatted);   
                 }
 
                 else
