@@ -136,14 +136,14 @@ function findFact(userId, math) {
                     if (err) {
                         console.log("Database error: " + err);
                     } else {
-                        message : factObj.text;
-                        message += {
+                       
+                        message = {
                             attachment: {
                                 type: "template",
                                 payload: {
                                     template_type: "generic",
                                     elements: [{
-                                        title: factObj.text,
+                                        title:"",
                                         subtitle: "Again?",
                                         buttons: [{
                                             type: "postback",
