@@ -143,7 +143,7 @@ function findFact(userId, math) {
                                 payload: {
                                     template_type: "generic",
                                     elements: [{
-                                        title:"",
+                                        title: factObj.text,
                                         subtitle: "Again?",
                                         buttons: [{
                                             type: "postback",
