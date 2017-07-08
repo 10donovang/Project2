@@ -107,6 +107,7 @@ function processMessage(event) {
                     break;
 
                 default:
+                console.log(formated);
                 var isnum = /^\d+$/.test(formated);
                 if(isnum)
                 {
@@ -117,6 +118,7 @@ function processMessage(event) {
                     formated += "/year";
                 else if (random == 2)
                     formated += "/math";
+                console.log(formated);
                 findFact(senderId, formated);   
                 }
 
