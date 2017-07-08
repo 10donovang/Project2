@@ -158,7 +158,8 @@ function findFact(userId, math) {
                                 }
                             }
                         };
-                        sendMessage(userId, factObj.text);
+                        var fact = JSON.stringify(factObj.text);
+                        sendMessage(userId, fact);
                         sendMessage(userId, message);
                     }
                 });
