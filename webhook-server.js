@@ -146,7 +146,6 @@ function findFact(userId, math) {
                                     template_type: "generic",
                                     elements: [{
                                         title: "Want to try again?",
-                                        subtitle: "Make your choice:",
                                         buttons: [{
                                             type: "postback",
                                             title: "Yes",
