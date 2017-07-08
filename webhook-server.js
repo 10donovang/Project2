@@ -136,6 +136,8 @@ function findFact(userId, math) {
                     if (err) {
                         console.log("Database error: " + err);
                     } else {
+                        message = JSON.stringify(factObj.text);
+                        sendMessage(userId, message);
                        
                         message = {
                             attachment: {
@@ -158,8 +160,7 @@ function findFact(userId, math) {
                                 }
                             }
                         };
-                        var fact = JSON.stringify(factObj.text);
-                        sendMessage(userId, fact);
+                        
                         sendMessage(userId, message);
                     }
                 });
