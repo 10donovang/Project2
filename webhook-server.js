@@ -143,9 +143,8 @@ function findFact(userId, math) {
                                 payload: {
                                     template_type: "generic",
                                     elements: [{
-                                        title: "Math Fact 5",
-                                        text: factObj.text,
-                                        subtitle: "Again?",
+                                        title: "Want to try again?",
+                                        subtitle: "Make your choice:",
                                         buttons: [{
                                             type: "postback",
                                             title: "Yes",
@@ -159,6 +158,7 @@ function findFact(userId, math) {
                                 }
                             }
                         };
+                        sendMessage(userId, factObj.text);
                         sendMessage(userId, message);
                     }
                 });
