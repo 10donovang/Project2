@@ -86,7 +86,7 @@ function processMessage(event) {
     if (!event.message.is_echo) {
         var message = event.message;
         var senderId = event.sender.id;
-
+        
         console.log("Received message from senderId: " + senderId);
         console.log("Message is: " + JSON.stringify(message));
 
@@ -94,7 +94,8 @@ function processMessage(event) {
         if (message.text) {
             var formatted = message.text;
             var formattedMsg = formatted.split("/").pop();
-          
+            
+
             switch (formattedMsg) {
                 case "trivia":
                 case "year":
@@ -104,14 +105,39 @@ function processMessage(event) {
                     break;
 
                 default:
-                sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+                randomFact(senderId, formatted);
         }
-
+           
         } 
         else if (message.attachments) {
             sendMessage(senderId, {text: "Sorry, I don't understand your request."});
         }
     }
+}
+
+function randomFact(userId, formatted){
+
+    var isnum = false;
+    var random;
+console.log(formatted);
+                isnum = /^\d+$/.test(formatted);
+                if(isnum)
+                {
+                  random = Math.floor(Math.random() * 3);
+                 if(random == 0)
+                    {formatted += "/trivia";}
+                else if (random == 1)
+                    {formatted += "/year";}
+                else if (random == 2)
+                   {formatted += "/math";}
+                console.log(formatted);
+                findFact(senderId, formatted);   
+                }
+
+                else
+                    sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+        
+
 }
 
 function findFact(userId, math) {
