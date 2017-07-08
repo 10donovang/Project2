@@ -107,9 +107,25 @@ function processMessage(event) {
                     break;
 
                 default:
+                var isnum = /^\d+$/.test(formated);
+                if(isnum)
+                {
+                 var random = Math.floor(Math.random() * 3);
+                 if(random == 0)
+                    formatted += "/trivia";
+                else if (random == 1)
+                    formated += "/year";
+                else if (random == 2)
+                    formated += "/math";
+                findFact(senderId, formated);   
+                }
+
+                else
                     sendMessage(senderId, {text: "Sorry, I don't understand your request."});
         }
-        } else if (message.attachments) {
+
+        } 
+        else if (message.attachments) {
             sendMessage(senderId, {text: "Sorry, I don't understand your request."});
         }
     }
