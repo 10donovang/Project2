@@ -136,7 +136,28 @@ function findFact(userId, math) {
                     if (err) {
                         console.log("Database error: " + err);
                     } else {
-                        message = factObj.text;
+                        message : factObj.text;
+                        message += {
+                            attachment: {
+                                type: "template",
+                                payload: {
+                                    template_type: "generic",
+                                    elements: [{
+                                        title: factObj.text,
+                                        subtitle: "Again?",
+                                        buttons: [{
+                                            type: "postback",
+                                            title: "Yes",
+                                            payload: "Correct"
+                                        }, {
+                                            type: "postback",
+                                            title: "No",
+                                            payload: "Incorrect"
+                                        }]
+                                    }]
+                                }
+                            }
+                        };
                         sendMessage(userId, message);
                     }
                 });
